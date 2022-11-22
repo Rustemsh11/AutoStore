@@ -1,0 +1,38 @@
+﻿@model AutoStore.Domain.Entities.ShopingDetails
+
+@{
+    ViewBag.Title = "Auto store: order";
+}
+
+<h2>Order now</h2>
+<p>Please write your data and we send auto</p>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary();
+    <h3>Data</h3>
+    <div class="form-group">
+        <label>Your name:</label>
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    </div>
+    <h3>Address of delivery</h3>
+    foreach (var property in ViewData.ModelMetadata.Properties)
+    {
+        if (property.PropertyName != "Name" && property.PropertyName != "GiftWrap")
+        {
+            <div class="form-group">
+                <label>@(property.DisplayName??property.PropertyName)</label>
+                @Html.TextBox(property.PropertyName, null, new { @class = "form-control" })
+            </div>
+        }
+    }
+    <h3>Options</h3>
+    <div class="checkbox">
+        <label>
+            @Html.EditorFor(c => c.GiftWrap)
+            Pack a gift?
+        </label>
+    </div>
+    <div class="text-center">
+        <input class="btn btn-primary" type="submit" value="Process the order" />
+    </div>
+}

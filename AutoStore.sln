@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32901.82
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoStore.WebUI", "AutoStore.WebUI\AutoStore.WebUI.csproj", "{69C1441B-3A8E-463A-8482-B47241B28C79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoStore.Domain", "AutoStore.Domain\AutoStore.Domain.csproj", "{58B327B2-DC63-40C0-AEF4-F0FB5CE6E370}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69C1441B-3A8E-463A-8482-B47241B28C79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69C1441B-3A8E-463A-8482-B47241B28C79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69C1441B-3A8E-463A-8482-B47241B28C79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69C1441B-3A8E-463A-8482-B47241B28C79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58B327B2-DC63-40C0-AEF4-F0FB5CE6E370}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58B327B2-DC63-40C0-AEF4-F0FB5CE6E370}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58B327B2-DC63-40C0-AEF4-F0FB5CE6E370}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58B327B2-DC63-40C0-AEF4-F0FB5CE6E370}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2F3AD11F-305F-4B87-B11D-011C9EA10202}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,54 @@
+﻿@model AutoStore.WebUI.Models.CartIndexViewModel
+
+@{
+    ViewBag.Title = "AutoStore: Your Cart";
+}
+<style>
+    #cartTable td {
+        vertical-align: middle
+    }
+</style>
+
+<h2>Your cart</h2>
+<table id="cartTable" class="table">
+    <thead>
+        <tr>
+            <th>Quantity</th>
+            <th>Auto</th>
+            <th class="text-right">Price</th>
+            <th class="text-right">Total Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var line in Model.Cart.cartLines)
+        {
+            <tr>
+                <td class="text-center">@line.Quantity</td>
+                <td class="text-left">@line.Auto.Name</td>
+                <td class="text-right">@line.Auto.Price.ToString("# ₽")</td>
+                <td class="text-right">@((line.Quantity*line.Auto.Price).ToString("# ₽"))</td>
+                <td>
+                    @using (Html.BeginForm("RemoveFromCart", "Cart"))
+                     {
+                        @Html.Hidden("AutoId", line.Auto.AutoId)
+                        @Html.HiddenFor(x => x.ReturnUrl)
+                        <input class="btn btn-sm btn-warning" type="submit" value="Delete" />
+
+
+                     }
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3" class="text-right">Total Price:</td>
+            <td class="text-right">@Model.Cart.SumTovar().ToString("# ₽")</td>
+        </tr>
+    </tfoot>
+</table>
+<div class="text-center">
+    <a class="btn btn-primary" href="@Model.ReturnUrl">Continue shopping</a>
+    @Html.ActionLink("Make order", "Checkout", null, new {@class="btn btn-primary" })
+</div>
+
